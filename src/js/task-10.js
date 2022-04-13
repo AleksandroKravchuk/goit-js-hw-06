@@ -22,15 +22,20 @@ function amountElement(event) {
     alert`Введите число от 1 до 100`
     event.currentTarget.value = ``;
   }
+  const amountOfElements = event.currentTarget.value;
+
+ console.log(refs.btnCreate.setAttribute(`index`,Number(amountOfElements) )) ;
   
-  console.log(event.currentTarget.value);
+  // console.log(refs.btnCreate.attributes)
+ 
+  // console.log(refs.btnCreate.attributes.index);
 }
  refs.btnCreate.addEventListener(`click`, createBoxes);
 // const elements = refs.inputValue.addEventListener(`input`, amountElement);
 // console.log(elements);
 
 function createBoxes(amount) {
-  console.log(amount);
+  console.log(amount.currentTarget);
   let element = ``;
   for (let i = 1; i <= amount;i+=1)  {
    element += `<div></div>`;
