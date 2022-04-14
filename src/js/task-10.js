@@ -26,7 +26,11 @@ refs.btnCreate.addEventListener(`click`, createBoxes);
     value: 20,
     addValue() {
       this.value += 10;
-    }
+   },
+   startValue() {
+     this.value = 20;
+   },
+ 
   }
 
 function getRandomHexColor() {
@@ -44,7 +48,7 @@ function createBoxes(amount) {
     element.style.height = `${changeSizes.value}px`; 
     element.style.backgroundColor = getRandomHexColor();
 
-  console.log(element);
+
     refs.boxes.append(element);
     
   } 
@@ -56,6 +60,7 @@ refs.btnDestroy.addEventListener(`click`, destroyBoxes);
 
 function destroyBoxes() {
   refs.boxes.innerHTML = ``;
+ changeSizes.startValue();
 }
   
   
