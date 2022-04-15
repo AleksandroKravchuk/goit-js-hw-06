@@ -60,7 +60,9 @@ refs.btnDestroy.addEventListener(`click`, destroyBoxes);
 
 function destroyBoxes() {
   refs.boxes.innerHTML = ``;
- changeSizes.startValue();
+  changeSizes.startValue();
+
+  
 }
   
   
