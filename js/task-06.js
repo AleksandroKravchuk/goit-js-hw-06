@@ -18,8 +18,8 @@ function addInputValue(even) {
 
     if (even.currentTarget.value.length !== addValue) {
 
-      return  input.classList.add(`invalid`);
-        
+               input.classList.add(`invalid`);
+     return    input.classList.remove(`valid`)
     }
     input.classList.add(`valid`);
     input.classList.replace(`invalid`, `valid`);

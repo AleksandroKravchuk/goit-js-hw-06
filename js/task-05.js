@@ -1,11 +1,15 @@
 const input = document.querySelector(`#name-input`);
 const nameInput = document.querySelector(`#name-output`)
+const name = nameInput.textContent;
 
-input.addEventListener(`input`, onInputFocus);
+input.addEventListener(`input`, onInputEnter);
 
 
-function onInputFocus(even) {
+function onInputEnter(even) {
 
-    nameInput.textContent = even.currentTarget.value;
-
+    if (even.currentTarget.value !== ``) {
+        nameInput.textContent = even.currentTarget.value;
+    } else { nameInput.textContent = `${name}` }; 
 }
+
+
