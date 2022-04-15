@@ -22,16 +22,16 @@ function amountElement(event) {
 
 refs.btnCreate.addEventListener(`click`, createBoxes);
 
- const changeSizes = {
-    value: 20,
-    addValue() {
-      this.value += 10;
-   },
-   startValue() {
-     this.value = 20;
-   },
- 
-  }
+const changeSizes = {
+  value: 20,
+  addValue() {
+    this.value += 10;
+  },
+  startValue() {
+    this.value = 20;
+  },
+
+}
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
@@ -42,31 +42,30 @@ function createBoxes(amount) {
   amount = refs.btnCreate.getAttribute(`index`);
   let element = ``;
   for (let i = 1; i <= amount; i += 1) {
-   changeSizes.addValue();
-   element = document.createElement(`div`);
-    element.style.width = `${changeSizes.value}px`; 
-    element.style.height = `${changeSizes.value}px`; 
+    changeSizes.addValue();
+    element = document.createElement(`div`);
+    element.style.width = `${changeSizes.value}px`;
+    element.style.height = `${changeSizes.value}px`;
     element.style.backgroundColor = getRandomHexColor();
 
 
     refs.boxes.append(element);
-    
-  } 
+
+  }
 }
 
-  
+
 refs.btnDestroy.addEventListener(`click`, destroyBoxes);
 
 
-function destroyBoxes() {
+function destroyBoxes(event) {
   refs.boxes.innerHTML = ``;
   changeSizes.startValue();
-
-  
+  refs.inputValue.value = ``;
 }
-  
-  
- 
-  
-  
+
+
+
+
+
 
