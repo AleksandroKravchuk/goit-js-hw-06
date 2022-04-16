@@ -1,9 +1,9 @@
 
 
-const pearentCalk = document.querySelector(`#counter`);
-const counterValue = document.querySelector(`#value`);
-const decrementBtn = document.querySelector(`[data-action="decrement"]`);
-const incrementBtn = document.querySelector(`[data-action="increment"]`);
+const pearentCalk = document.querySelector('#counter');
+const counterValue = document.querySelector('#value');
+const decrementBtn = document.querySelector('[data-action="decrement"]');
+const incrementBtn = document.querySelector('[data-action="increment"]');
 
 
 const calkr = {
@@ -16,12 +16,12 @@ const calkr = {
   }
 }
 
-decrementBtn.addEventListener(`click`, function () {
+decrementBtn.addEventListener('click', function () {
   calkr.increment();
   counterValue.textContent = calkr.value;
 })
 
-incrementBtn.addEventListener(`click`, function () {
+incrementBtn.addEventListener('click', function () {
   calkr.dicrement();
   counterValue.textContent = calkr.value;
 })

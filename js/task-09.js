@@ -1,10 +1,10 @@
 const refs = {
-body: document.querySelector(`body`),
-btnChangeColor:document.querySelector(`.change-color`),
-textChangeColor:document.querySelector(`.color`),
+body: document.querySelector('body'),
+btnChangeColor:document.querySelector('.change-color'),
+textChangeColor:document.querySelector('.color'),
 }
 
-refs.btnChangeColor.addEventListener(`click`, getNewColor);
+refs.btnChangeColor.addEventListener('click', getNewColor);
 
 function getNewColor(event) {
   event.currentTarget.value = color;

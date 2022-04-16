@@ -1,26 +1,27 @@
 const refs = {
-  inputValue: document.querySelector(`[type="number"]`),
-  btnCreate: document.querySelector(`[data-create]`),
-  btnDestroy: document.querySelector(`[data-destroy]`),
-  boxes: document.querySelector(`#boxes`),
+  inputValue: document.querySelector('[type="number"]'),
+  btnCreate: document.querySelector('[data-create]'),
+  btnDestroy: document.querySelector('[data-destroy]'),
+  boxes: document.querySelector('#boxes'),
 }
 
 
-refs.inputValue.addEventListener(`input`, amountElement);
+refs.inputValue.addEventListener('input', amountElement);
 
 
 function amountElement(event) {
   if (event.currentTarget.value < 1 || event.currentTarget.value > 100) {
-    alert`Введите число от 1 до 100`
-    event.currentTarget.value = ``;
+    event.currentTarget.value = '';
+    alert`Введите число от 1 до 100`;
+    
   }
   const amountOfElements = event.currentTarget.value;
 
-  refs.btnCreate.setAttribute(`index`, amountOfElements);
+  refs.btnCreate.setAttribute('index', amountOfElements);
 }
 
 
-refs.btnCreate.addEventListener(`click`, createBoxes);
+refs.btnCreate.addEventListener('click', createBoxes);
 
 const changeSizes = {
   value: 20,
@@ -39,11 +40,11 @@ function getRandomHexColor() {
 
 
 function createBoxes(amount) {
-  amount = refs.btnCreate.getAttribute(`index`);
-  let element = ``;
+  amount = refs.btnCreate.getAttribute('index');
+  let element = '';
   for (let i = 1; i <= amount; i += 1) {
     changeSizes.addValue();
-    element = document.createElement(`div`);
+    element = document.createElement('div');
     element.style.width = `${changeSizes.value}px`;
     element.style.height = `${changeSizes.value}px`;
     element.style.backgroundColor = getRandomHexColor();
@@ -55,7 +56,7 @@ function createBoxes(amount) {
 }
 
 
-refs.btnDestroy.addEventListener(`click`, destroyBoxes);
+refs.btnDestroy.addEventListener('click', destroyBoxes);
 
 
 function destroyBoxes(event) {

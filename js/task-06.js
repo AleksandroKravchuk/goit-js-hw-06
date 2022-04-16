@@ -1,16 +1,8 @@
-const input = document.querySelector(`#validation-input`);
+const input = document.querySelector('#validation-input');
 
- 
+input.addEventListener('change', addInputValue);
 
-
-
-
-
-
-
-input.addEventListener(`change`, addInputValue);
-
-input.addEventListener(`blur`, addInputValue);
+input.addEventListener('blur', addInputValue);
 
 function addInputValue(even) {
     let addValue = input.dataset.length
@@ -18,11 +10,11 @@ function addInputValue(even) {
 
     if (even.currentTarget.value.length !== addValue) {
 
-               input.classList.add(`invalid`);
-     return    input.classList.remove(`valid`)
+               input.classList.add('invalid');
+     return    input.classList.remove('valid')
     }
-    input.classList.add(`valid`);
-    input.classList.replace(`invalid`, `valid`);
+    input.classList.add('valid');
+    input.classList.replace('invalid', 'valid');
     return input;
 
 }
