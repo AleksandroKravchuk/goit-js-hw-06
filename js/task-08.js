@@ -8,7 +8,7 @@ function onFormSubmit(event) {
     event.preventDefault();
     
     if (event.currentTarget.elements[0].value === '' || event.currentTarget.elements[1].value === '') {
-        alert('Все поля должны быть заполнены');
+       return alert('Все поля должны быть заполнены');
     } 
     let theseFormSubmit = {};
     theseFormSubmit.Email = event.currentTarget.elements[0].value;
